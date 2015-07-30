@@ -1,0 +1,108 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    RewriteBase /
+	
+	##Removes access to the system folder by users.
+    ##Additionally this will allow you to create a System.php controller,
+    ##previously this would not have been possible.
+    ##'system' can be replaced if you have renamed your system folder.
+    RewriteCond %{REQUEST_URI} ^system.*
+    RewriteRule ^(.*)$ /index.php?/$1 [L]
+    
+    ##When your application folder isn't in the system folder
+    ##This snippet prevents user access to the application folder
+    ##Submitted by: Fabdrol
+    ##Rename 'application' to your applications folder name.
+    #RewriteCond %{REQUEST_URI} ^application.*
+    #RewriteRule ^(.*)$ /tienda/index.php?/$1 [L]
+
+    ##Checks to see if the user is attempting to access a valid file,
+    ##such as an image or css document, if this isn't true it sends the
+    ##request to index.php
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteRule ^(.*)$ index.php?/$1 [L]
+    
+    #### tienda paginada
+    ##RewriteRule ^(0+)/?$			http://%{HTTP_HOST}/
+    RewriteRule ^([0-9]+)/?$		index.php?page=$1
+    
+    #Test Redirect
+    #RewriteRule ^(*.php)$ /$1 [L]
+    RewriteRule ^login/?$ 		login.php
+    RewriteRule ^logout/?$ 		logout.php
+    RewriteRule ^registro/?$ 	registro.php
+    RewriteRule ^password/?$ 	password.php
+    RewriteRule ^categoria/?$ 	categorias.php
+        
+    RewriteRule ^categoria/6/([0-9]+)/?$	promociones_especiales.php?id_categoria=6&page=$1
+    RewriteRule ^categoria/6/?$ 			promociones_especiales.php?id_categoria=6&page=0
+	
+	#promociones especiales padres
+	RewriteRule ^promocion_h/([0-9]+)/?$ 	promocion_h.php?id_promo_padre=$1
+	RewriteRule ^promocion_h/([0-9]+)/directa?$ 	promocion_h.php?id_promo_padre=$1&tipo=$2
+	
+	RewriteRule ^promocion_h/([0-9]+)/([a-zA-Z._]+)?$ 	promocion_h.php?id_promo_padre=$1&publicacion=$2
+	RewriteRule ^promocion_h/([0-9]+)/([a-zA-Z._]+)/directa?$ 	promocion_h.php?id_promo_padre=$1&publicacion=$2&tipo=$3
+	##para las promociones con el header sin menu
+    
+    
+    #### Home
+    RewriteRule ^home/?$					http://%{HTTP_HOST}
+    #RewriteRule ^([A-Za-z\+]*)/home/?$		http://%{HTTP_HOST}/
+    
+    
+    #### Promociones
+	
+    RewriteRule ^promocion/([0-9]+)/?$											promociones.php?id_promocion=$1
+	##para las promociones con el header sin menu
+	RewriteRule ^promocion/([0-9]+)/directa?$											promociones.php?id_promocion=$1&tipo=$2
+
+    RewriteRule ^publicacion/([0-9]+)/promocion/([0-9]+)/?$						promociones.php?id_publicacion=$1&id_promocion=$2
+	##para las promociones con el header sin menu
+	RewriteRule ^publicacion/([0-9]+)/promocion/([0-9]+)/directa?$						promociones.php?id_publicacion=$1&id_promocion=$2&tipo=$3
+	
+    RewriteRule ^categoria/([0-9]+)/publicacion/([0-9]+)/promocion/([0-9]+)/?$	promociones.php?id_categoria=$1&id_publicacion=$2&id_promocion=$3
+	RewriteRule ^categoria/([0-9]+)/publicacion/([0-9]+)/promocion/([0-9]+)/([a-z])?$	promociones.php?id_categoria=$1&id_publicacion=$2&id_promocion=$3&tipo=$4
+    
+    #### Publicaciones
+    RewriteRule ^publicacion/?$								publicaciones.php
+    RewriteRule ^publicacion/ofertas/([0-9]+)/?$			publicaciones.php?mostrar=ofertas&id_publicacion=$1
+	##RewriteRule ^publicacion/ofertas/([0-9]+)/?$			publicaciones.php?mostrar=ofertas&id_publicacion=$1&page=0
+	
+	###### paginado simple de las ofertas de la publicación
+	RewriteRule ^publicacion/ofertas/([0-9]+)/([0-9]+)/?$	publicaciones.php?mostrar=ofertas&id_publicacion=$1&page=$2
+	
+	###### detalle de la promoción de una publicación que no trae más de un formato
+    RewriteRule ^publicacion/detalle/([0-9]+)/?$ 			publicaciones.php?mostrar=detalle&id_publicacion=$1
+    
+    #### Categorías
+    RewriteRule ^categoria/([0-9]+)/?$ categorias.php?id_categoria=$1
+    
+    #### Categoría/Publicaciones
+    RewriteRule ^categoria/([0-9]+)/publicacion/ofertas/([0-9]+)/?$		publicaciones.php?id_categoria=$1&mostrar=ofertas&id_publicacion=$2
+    RewriteRule ^categoria/([0-9]+)/publicacion/detalle/([0-9]+)/?$ 	publicaciones.php?id_categoria=$1&mostrar=detalle&id_publicacion=$2
+	##para las promociones con el header sin menu
+	RewriteRule ^categoria/([0-9]+)/publicacion/detalle/([0-9]+)/directa?$ 	publicaciones.php?id_categoria=$1&mostrar=detalle&id_publicacion=$2&tipo=$3
+	
+    
+	#### Login y Password
+    RewriteRule ^password/([A-Za-z\+]+)/?$	password.php?accion=$1
+    ##La siguiente debe ser: RewriteRule ^password/([A-Za-z\+]+)/([A-Za-z0-9\+]+)/([A-Za-z0-9\+]+)/?$  password.php?accion=$1&passtemp=$2&datcont=$3
+    RewriteRule ^password/([A-Za-z\+]+)/([A-Za-z0-9\+]+)/?$ 	password.php?accion=$1&passtemp=$2
+    
+	##remove trail slash
+	RewriteRule ^(.+)/$  /$1 [R=301,L]
+	##redirecciona cualquier alfanumerico sin slash
+	RewriteRule ^([^\/][a-zA-Z0-9]*)$ ${mapeo:$1} 
+	
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    # If we don't have mod_rewrite installed, all 404's
+    # can be sent to index.php, and everything works as normal.
+    # Submitted by: ElliotHaughin
+
+    ErrorDocument 404 /index.php
+</IfModule>

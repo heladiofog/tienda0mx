@@ -1,0 +1,43 @@
+#viewlet-formatos {
+	margin: 30px 0 -25px 0;
+	clear: both;	
+	width: 527px;
+}
+
+#viewlet-formatos .cuenta_promociones {
+	font-family: Arial;
+	font-size: 13px;
+	color:	#464646;
+	font-weight: bold;
+
+}
+
+#viewlet-formatos .leyenda_formato {
+	margin: 8px 0 8px 0;
+	font-family: Arial;
+	font-size: 13px;
+	color:	#939393;
+	font-weight: bold;
+}
+
+#viewlet-formatos .leyenda_formato label {
+	color:	#e09f1a;
+	font-weight: bold;
+}
+
+#viewlet-formatos  .pleca{
+	clear: both;
+	border:none;
+	width:529px;			
+	height: 3px;
+	/*margin-left: 40px;*/
+	background: url('../images/css_sprite_Lineseparacion.jpg') repeat;	
+	background-position: 0px 0px;	
+	
+	
+}
+
+#viewlet-formatos .label-right{
+	float: right;
+	color: #464646;
+}

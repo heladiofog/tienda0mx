@@ -1,0 +1,206 @@
+﻿/* viewlet-carrito */
+
+/* new design */
+#viewlet-carrito{	
+	padding: 10px;
+	height: auto;	
+	overflow: hidden;	
+	background-color: #000;	
+	margin: 0px;	
+	display: block;
+	position: relative;
+}
+
+/* new design */
+#viewlet-carrito .img-big{
+	float: left; 
+	width: 175px; 
+	height: 100%;	
+}
+
+/* new design */
+#viewlet-carrito .pleca_vertical{	
+	min-height: 330px;
+	width: 48px; 
+	float: left; 
+	padding: 0px; 
+	background-image: url("../images/css_sprite_pleca_home.jpg"); 
+	background-repeat: repeat-y; 
+	margin: 0px 20px; 	
+}
+
+#viewlet-carrito .plecas{
+	margin-left: 20px; 
+	padding-left: 67px;		
+	background-image: url("../images/css_sprite_pleca_home.jpg");
+	background-repeat: repeat-y;
+	min-height: 300px;
+}
+
+#viewlet-carrito ul{	
+	margin: 0px;
+	padding: 0px;	
+	list-style: none;	
+	display: block;
+	clear: both;	
+}
+
+#viewlet-carrito ul li{	
+	text-align: center;								
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;	
+	float: left;		
+	margin-bottom: 15px;			
+}
+
+
+#viewlet-carrito ul li .descripcion_producto{
+	padding: 0px 5px;	
+	width: 180px;
+	overflow: hidden
+}
+
+#viewlet-carrito ul li .descripcion_producto .precio{
+	color: #E80403;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+#viewlet-carrito ul li .descripcion_producto .descripcion1{
+	color: #9A9A9A;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#viewlet-carrito ul li .descripcion_producto .descripcion2{
+	color: #E80403;
+	font-size: 12px;	
+}
+#viewlet-carrito ul li .descripcion_producto .descripcion3{
+	color: #E0E0E0;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#viewlet-carrito li .precio_pagar{	
+	color: #FFF;
+	font-size: 12px;
+	font-weight: lighter;
+}
+
+#viewlet-carrito li .precio_pagar .rojo{
+	color: #E80403;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#pleca_totales{
+	 height: 1px; 
+	 background-color: #484848;
+}
+
+#totales{
+	padding: 0px 10px 10px 10px; 
+	background-color: #000;	
+}
+
+#total{
+	overflow:hidden; 
+	display: block;	
+}
+
+#total .total-right{	
+	padding-top: 0px;				
+	display: inline; 
+	float: right;	
+}
+
+#total .total-right .carrito{
+	background: url('../images/kiosco_carrito.png') no-repeat;	
+	background-position: 0px 0px;				
+	height: 30px;
+	width: 25px;		
+	display: inline;
+	float: left;
+	padding: 10px 0px 0px 15px;
+	color: #E50304;
+	font-size: 11px;
+	font-weight: bold;	
+}
+
+#total .total-right .blanco{
+	color: #FDFDFD;
+	font-size: 16px;
+	font-weight: lighter;
+	display: inline;
+	float: left;
+	padding: 12px 10px 0px 5px;
+	height: 30px;
+	vertical-align: middle;
+}
+
+#total .total-right .rojo{
+	color: #E80403;
+	font-size: 26px;
+	font-weight: bold;
+	display: inline;
+	float: left;
+	padding: 2px 0px 0px 0px;	
+	height: 30px;
+	vertical-align: middle;
+}
+
+#botones{
+	overflow:hidden; 
+	display: block;
+}
+
+#botones .seguir-comprando{
+	display: inline; 
+	float: left;
+	background-image: url('../images/kisco_contenido_pleca.png');	
+	color: #FFFFFF;
+	font-size: 14px;	
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+#botones .pagar{
+	display: inline; 
+	float: right;
+	background-image: url('../images/kisco_contenido_pleca.png');	
+	color: #FFFFFF;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0px 10px 0px 5px;
+	cursor: pointer;	
+}
+
+#botones .boton-pagar{
+	background: url('../images/kiosco_carrito_tarjeta.png') no-repeat;	
+	background-position: 60px 0px;				
+	height: 30px;
+	width: 95px;
+	color: #FFF;
+	text-align: left;
+	border: none;
+	cursor: pointer;
+}
+
+.link-eliminar{
+	background: url('../images/kiosco_carrito_eliminar.png') no-repeat;
+	height: 25px;
+	width: 80px;		
+	position: absolute;
+	bottom: 0px; 
+	left: 0px;							
+}
+
+.no-items{
+	color: #E80403;
+	font-size: 16px;
+	font-weight: bold;
+	padding-left: 40px; 
+}

@@ -1,0 +1,148 @@
+#viewlet-detalle-suscripcion{						
+	margin-top: 22px;			
+	font-family: Arial;	
+	padding-left: 40px;
+	overflow:hidden; 
+	display: block;								
+}
+
+#viewlet-detalle-suscripcion .bloque-left{	
+	width: 190px;
+	min-height: 173px;
+	float: left;		
+	text-align: center;
+	padding-top: 20px;
+	display: block;	
+}
+	
+
+#viewlet-detalle-suscripcion .bloque-middle{
+	float: left;
+	padding: 0px 60px;		
+	width: 165px;	
+}
+/*
+#viewlet-detalle-suscripcion .bloque-middle img{
+	#height: 225px;
+	#width: 165px;
+}
+*/
+
+#viewlet-detalle-suscripcion .bloque-right{
+	float: left;	
+	width: 190px;
+	min-height: 173px;
+	padding-top: 20px;
+	text-align: center;	
+}
+
+#viewlet-detalle-suscripcion .back-rayado{
+	background-image: url('../images/kisco_contenido_pleca.png');	
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px;
+	text-align: left;
+	margin: 10px 0px;
+}	
+
+#viewlet-detalle-suscripcion .boton-comprar-ahora{
+	background: url('../images/kiosco_carrito_tarjeta.png') no-repeat;	
+	background-position: 150px 0px;				
+	height: 30px;
+	width: 185px;	
+	text-align: left;
+	border: none;
+	color: #8dc63f;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#viewlet-detalle-suscripcion .boton-anadir-carrito{
+	background: url('../images/kiosco_carrito.png') no-repeat;	
+	background-position: 150px 0px;				
+	height: 30px;
+	width: 185px;	
+	text-align: left;
+	border: none;
+	color: #8dc63f;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#viewlet-detalle-suscripcion .precio{
+	color: #8dc63f;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+#viewlet-detalle-suscripcion .descripcion-promocion{
+	color: #9A9A9A;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
+
+
+#viewlet-detalle-suscripcion .descripcion{					
+	padding: 10px 0px 5px 0px;
+	color: #939393;
+	font-size: 13px;			
+}
+
+#viewlet-detalle-suscripcion .indicaciones{
+	color: #FFF;
+	margin-top: 5px;	
+}
+
+#viewlet-detalle-suscripcion .descripcion1{
+	color: #9A9A9A;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#viewlet-detalle-suscripcion .descripcion2{
+	color: #E80403;
+	font-size: 12px;	
+}
+#viewlet-detalle-suscripcion .descripcion3{
+	color: #E0E0E0;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 0px;	
+}
+
+
+.hidden{
+	display: none
+}
+
+.styled-select {
+	margin-top: 5px;
+	padding-right: 7px;
+	padding-top: 0px;
+   	width: 175px;
+   	height: 18px;
+   	overflow: hidden;
+   	background: transparent url('../images/selector.png') no-repeat;   
+   	padding-bottom: 5px; 	
+}
+
+.cont-select{
+	width: 150px;	
+	overflow: hidden;
+}
+
+.styled-select select {
+	background: transparent;
+ 	width: 235px;
+   	padding: 0px 35px 0px 5px;
+   	font-size: 10px;   	
+   	height: 17px;
+   	-webkit-appearance: none;   
+   	border: none;	   	
+} 
+   

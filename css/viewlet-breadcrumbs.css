@@ -1,0 +1,34 @@
+#breadcrumbs{
+	/*border-bottom: solid 1px #CCC;*/
+	margin-top: -17px;
+	margin-left: 40px;	
+	padding-bottom: 0px;			
+	position: relative;
+	z-index:999;
+}
+
+#breadcrumbs a{
+	color: #FFF;	
+	font-size: 10px;
+	text-decoration: none;
+	float: left;
+	text-transform: uppercase;
+}
+
+#breadcrumbs .triangulo-negro-der{	
+	border:none;
+	width: 3px;			
+	height: 8px;
+	background: url('../images/css_sprite_Triangulos.png') no-repeat;	
+	background-position: -11px -2px;		
+	padding-left:2px;
+	margin: 5px 5px;	
+	float: left;	
+}
+
+#breadcrumbs .noref{
+	color: #FFF;	
+	font-size: 10px;
+	text-decoration: none;
+	text-transform: uppercase;	
+}
